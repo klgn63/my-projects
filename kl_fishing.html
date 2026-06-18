@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎣 3D 강변 낚시 맵</title>
+<meta name="description" content="사실적인 강변 낚시 3D 환경">
+<link rel="stylesheet" href="kl_style_f.css">
+<!-- Import map for Three.js -->
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- Three.js Canvas Container -->
+<div id="fishing-container"></div>
+
+<!-- Crosshair for FPS view -->
+<div id="crosshair"></div>
+
+<!-- Start Overlay -->
+<div id="blocker">
+  <div id="instructions">
+    <span style="font-size:36px; font-weight: 900; color:#fff; margin-bottom: 20px; display:inline-block;">🎣 3D 낚시터 (베타)</span><br/><br/>
+    클릭하여 시작합니다<br/><br/>
+    <b>이동:</b> W, A, S, D<br/>
+    <b>점프:</b> Space<br/>
+    <b>시야:</b> 마우스<br/><br/>
+    <a href="kl_earn.html" class="back-btn" style="position:relative; display:inline-block; margin-top:20px;">← 도박장으로 돌아가기</a>
+  </div>
+</div>
+
+<!-- Time of Day Toggle -->
+<div id="time-toggle-container">
+  <div class="time-options">
+    <img src="icons8-sun-32.png" alt="Morning" id="btn-morning" class="time-btn" title="아침">
+    <img src="icons8-sun-cloud-32.png" alt="Afternoon" id="btn-afternoon" class="time-btn" title="오후">
+    <img src="icons8-moon-32.png" alt="Night" id="btn-night" class="time-btn" title="밤">
+  </div>
+  <img src="icons8-sun-32.png" alt="Current Time" id="btn-current-time" class="time-btn active">
+</div>
+
+<script type="module" src="kl_script_f.js"></script>
+</body>
+</html>

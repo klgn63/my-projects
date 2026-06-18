@@ -1,0 +1,136 @@
+/* kl_style_f.css - 3D 낚시 시스템 스타일 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #87CEEB; /* 하늘색 배경 (Three.js 로딩 전) */
+  font-family: 'Segoe UI', sans-serif;
+}
+
+#fishing-container {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* FPS 크로스헤어 */
+#crosshair {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* 클릭 방해 안 함 */
+  z-index: 100;
+}
+
+/* 마우스 락 오버레이 (시작 화면) */
+#blocker {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+#instructions {
+  text-align: center;
+  color: #cccccc;
+  font-size: 16px;
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+.back-btn {
+  padding: 12px 24px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  pointer-events: all;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.back-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.8);
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+/* 시간대 조절 토글 UI */
+#time-toggle-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 150;
+  pointer-events: auto;
+}
+
+.time-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 30px;
+  padding: 5px;
+  margin-bottom: 10px;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+#time-toggle-container:hover .time-options {
+  height: 150px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.time-btn {
+  width: 40px;
+  height: 40px;
+  padding: 4px;
+  cursor: pointer;
+  border-radius: 50%;
+  margin: 4px 0;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.time-btn:hover {
+  transform: scale(1.1);
+  background: rgba(0, 0, 0, 0.1);
+}
+
+#btn-current-time {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
